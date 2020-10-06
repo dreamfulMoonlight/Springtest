@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
     //RestController注解相当于@ResponseBody和@Controller的结合
 @RestController
 public class HelloController {
-    //@Value("${hello.msg}")
+    @Value("${hello.msg}")
     private String msg;
     //RequestMapping是一个用来处理请求地址映射的注解，使用的范围是：类或方法。用于类上，表示
     //类中所有响应请求的方法都是以该地址作为父路径。
@@ -23,8 +23,8 @@ public class HelloController {
     public String showMsg() {
         //String str=null;
         //str.length();
-        throw new ApplicationException("出错了");
-        //return this.msg;
+        //throw new ApplicationException("出错了");
+        return this.msg;
     }
 }
 
