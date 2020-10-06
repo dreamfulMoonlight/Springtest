@@ -1,0 +1,17 @@
+#调整端点的前缀路径为/
+management:
+    endpoints:
+      web:
+        base-path: /
+        #开启暴露所有的断点信息，默认只有health和info
+        exposure:
+          include: "*"
+
+    endpoint:
+      health:
+        show-details: always  #显示健康具体信息，默认不会显示详细信息
+      httptrace:
+          enabled: true  #启用httptrace端点
+    #更改监控端点号
+    server:
+      port: 8088
